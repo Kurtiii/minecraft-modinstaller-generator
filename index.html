@@ -30,8 +30,35 @@
                 <form action="#">
                     <h6>
                         Which forge version do you want to use?
-                        <a href="#" class="text-muted">read how</a>
+                        <a href="#" class="text-muted" data-bs-toggle="collapse" data-bs-target="#collapseHelpForgeUrl">read how</a>
                     </h6>
+                    <div class="collapse" id="collapseHelpForgeUrl">
+                        <div class="card card-body my-4">
+                            You have to provide a URL to a forge-installer.jar file.
+                            <br><br>
+                            <h6>
+                                Forge download page
+                                <span class="badge bg-success bg-opacity-10 text-success">
+                                    recommended
+                                </span>
+                            </h6>
+                            <p>
+                                Visit the <a href="https://files.minecraftforge.net/" target="_blank" rel="noopener noreferrer" class="text-reset">forge download page</a> and select the version you want to use.
+                                Then click on the <code>Installer</code> button at <b>recommended</b>.
+                                Wait until the <b>Skip</b>-Button appears and right-click on it.
+                                Choose "Copy link address" and paste it into the input field below.
+                            </p>
+                            <br>
+                            <h6>Self-hosted</h6>
+                            <p>
+                                If you want to host the forge.jar file yourself you can provide a link to the forge.jar file.
+                                For security reasons we warn users about an installation from an untrusted source.
+                            </p>
+                            <code>
+                                https://example.com/forge.jar
+                            </code>
+                        </div>
+                    </div>
                     <div class="input-group">
                         <span class="input-group-text">Forge-URL</span>
                         <input type="text" aria-label="Forge-URL" class="form-control" placeholder="URL to forge.jar file..." id="inputForgeUrl">
@@ -46,8 +73,52 @@
 
                     <h6 class="mt-5">
                         Where are the mods located?
-                        <a href="#" class="text-muted">read how</a>
+                        <a href="#" class="text-muted" data-bs-toggle="collapse" data-bs-target="#collapseHelpModsUrl">read how</a>
                     </h6>
+                    <div class="collapse" id="collapseHelpModsUrl">
+                        <div class="card card-body my-4">
+                            <p>
+                                You have to provide a URL to a zip file that contains all the mods you want to install.
+                                The zip file can <b>not</b> contain any folders. All files have to be in the root of the zip file.
+                            </p>
+                            <br>
+                            <code>
+                                mods.zip
+                                <br>
+                                ├── mod1.jar
+                                <br>
+                                ├── mod2.jar
+                                <br>
+                                └── mod3.jar
+                            </code>
+                            <br>
+                            <h6>Cloud providers</h6>
+                            To get a direct download link for your zip file you can read the following guides:
+                            <ul>
+                                <li>
+                                    <a href="https://www.dropbox.com/help/files-folders/share/force-download" target="_blank" rel="noopener noreferrer" class="text-reset">
+                                        Dropbox
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://sites.google.com/site/gdocs2direct/" target="_blank" rel="noopener noreferrer" class="text-reset">
+                                        Google Drive
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.joelgrayson.com/onedrive-download-link-generator" target="_blank" rel="noopener noreferrer" class="text-reset">
+                                        OneDrive
+                                    </a>
+                                </li>
+                            </ul>
+                            <h6>Self-hosted</h6>
+                            If you want to host the zip file yourself you can provide a link to the zip file.
+                            <br>
+                            <code>
+                                https://example.com/mods.zip
+                            </code>
+                        </div>
+                    </div>
                     <div class="input-group">
                         <span class="input-group-text">Mods-URL</span>
                         <input type="text" aria-label="Mods-URL" class="form-control" placeholder="URL to mods.zip file..."
@@ -63,8 +134,30 @@
                         <div class="card card-body mb-5">
                             <h6>
                                 How do you want to handle errors?
-                                <a href="#" class="text-muted">read how</a>
+                                <a href="#" class="text-muted" data-bs-toggle="collapse" data-bs-target="#collapseHelpErrorHandling">read how</a>
                             </h6>
+                            <div class="collapse" id="collapseHelpErrorHandling">
+                                <div class="card card-body my-4">
+                                    <h6>
+                                        Online error handling
+                                        <span class="badge bg-success bg-opacity-10 text-success">
+                                            recommended
+                                        </span>
+                                    </h6>
+                                    <p>
+                                        This option will open the error page on my website if an error occurs.
+                                        This page will show you the error and how to fix it (if possible).
+                                    </p>
+
+                                    <h6 class="mt-5">
+                                        Local error handling
+                                    </h6>
+                                    <p>
+                                        This option will show the error in the installer itself. This is not recommended
+                                        because the error message is not very detailed and doesn't show you how to fix it.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="radioErrorHandling" id="radioErrorOnline" checked>
                                 <label class="form-check-label" for="radioErrorOnline">
