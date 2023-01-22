@@ -251,7 +251,7 @@ cls
 $("#containerCode").text(bat);
 
 // check if forge url doesnt starts with https://files.minecraftforge.net/net/minecraftforge/forge/ using jquery
-if (!forgeUrl.startsWith("https://files.minecraftforge.net/") || !forgeUrl.startsWith("https://maven.minecraftforge.net/")) {
+if (!forgeUrl.startsWith("https://files.minecraftforge.net/") && !forgeUrl.startsWith("https://maven.minecraftforge.net/")) {
     // show error message
     $('#alertNotFromForge').show();
 }
