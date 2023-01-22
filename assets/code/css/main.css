@@ -1,0 +1,17 @@
+/* import font from ttf */
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('../../fonts/Minecraft.ttf');
+}
+
+/* use as main font */
+body {
+    font-family: 'Minecraftia', sans-serif;
+}
+
+/* add background image for body */
+body {
+    background-image: url('../../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

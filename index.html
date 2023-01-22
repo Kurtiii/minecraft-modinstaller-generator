@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Mod-Installer Generator by Kurtiii</title>
+    <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/code/css/main.css">
+</head>
+<body>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh">
+        <div class="card m-auto" style="max-width: 900px">
+            <div class="card-body pt-5 px-5">
+                <h1 class="h3">
+                    Generate your own Minecraft Mod-Installer!
+                </h1>
+                <p>
+                    This is a simple tool to generate your own Minecraft Mod-Installer. You can use it to install mods on your minecraft installation without the need to install forge or fabric. Just download the installer and run it. It will install the mods for you.
+                </p>
+
+                <select class="form-select" aria-label="Default select example" required>
+                    <option value="1.19.3" selected>Minecraft Version 1.19.3</option>
+                    <option value="1.12.2">Minecraft Version 1.12.2</option>
+                    <option value="1.17.10">Minecraft Version 1.7.10</option>
+                    <option value="otherversion">other version</option>
+                </select>
+                
+
+                <hr class="my-4">
+
+                <div class="form-text">
+                    <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#sourcesModal">Sources and authors</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -> sources -->
+    <div class="modal fade" id="sourcesModal" tabindex="-1" aria-labelledby="sourcesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="sourcesModalLabel">Sources and authors</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Coded by <a href="https://kurtiii.de" target="_blank" class="text-reset">Kurt Krüger</a>
+                    <br>
+                    <br>
+                    <a href="https://getbootstrap.com/" target="_blank" class="text-reset">Bootstrap</a> by <a href="https://twitter.com/mdo" target="_blank" class="text-reset">Mark Otto</a> and <a href="https://twitter.com/fat" target="_blank" class="text-reset">Jacob Thornton</a>
+                    <br>
+                    Font "Minecraft" by <a href="https://www.dafont.com/de/craftron-gaming.d6128" class="text-reset">Craftron Gaming</a>
+                    <br>
+                    Background image by <a href="https://pixabay.com/de/illustrations/minecraft-shader-minecraft-wallpaper-1970876/" class="text-reset">@minecraftfaq</a>
+                    <br>
+                    Icons by <a href="https://fontawesome.com/" class="text-reset">Font Awesome</a>
+                    <hr>
+                    <p class="form-text text-muted">
+                        <strong>Important:</strong> This tool is not affiliated with Mojang or Minecraft. It is just a tool to make mod
+                        installation easier.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
