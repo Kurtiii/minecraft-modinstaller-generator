@@ -1,14 +1,14 @@
 $('#btnForge1-19-3').click(function () {
-    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.3-39.0.8/forge-1.19.3-39.0.8-installer.jar');
+    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.3-44.1.0/forge-1.19.3-44.1.0-installer.jar');
 });
 $('#btnForge1-18-2').click(function () {
-    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-39.0.8/forge-1.18.2-39.0.8-installer.jar');
+    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.2.0/forge-1.18.2-40.2.0-installer.jar');
 });
 $('#btnForge1-16-5').click(function () {
-    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.8/forge-1.16.5-36.2.8-installer.jar');
+    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.34/forge-1.16.5-36.2.34-installer.jar');
 });
 $('#btnForge1-12-2').click(function () {
-    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar');
+    $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar');
 });
 $('#btnForge1-7-10').click(function () {
     $('#inputForgeUrl').val('https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-installer.jar');
