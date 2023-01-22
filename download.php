@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/code/css/main.css">
     <script src="assets/lib/jquery/jquery.min.js"></script>
-    <script src="assets/code/js/main.js" defer></script>
+    <script src="assets/code/js/download.js" defer></script>
 </head>
 
 <body>
@@ -17,105 +17,34 @@
         <div class="card m-auto" style="max-width: 900px" id="cardGenerator">
             <div class="card-body pt-5 px-5">
                 <h1 class="h3">
-                    Generate your own Minecraft Mod-Installer!
+                    Download Minecraft Mod-Installer
                 </h1>
                 <p>
-                    This is a simple tool to generate your own Minecraft Mod-Installer. You can use it to install mods
-                    on your minecraft installation without the need to install forge or fabric. Just download the
-                    installer and run it. It will install the mods for you.
+                    Someone generated a Minecraft mod-installer for you. You can download it here.
                 </p>
 
                 <hr class="my-4">
 
-                <form action="#">
-                    <h6>
-                        Which forge version do you want to use?
-                        <a href="#" class="text-muted">read how</a>
-                    </h6>
-                    <div class="input-group">
-                        <span class="input-group-text">Forge-URL</span>
-                        <input type="text" aria-label="Forge-URL" class="form-control" placeholder="URL to forge.jar file..." id="inputForgeUrl">
-                    </div>
-                    <div class="text-muted mt-2">
-                        <a href="#" class="text-reset" id="btnForge1-19-3">1.19.3</a> |
-                        <a href="#" class="text-reset" id="btnForge1-18-2">1.18.2</a> |
-                        <a href="#" class="text-reset" id="btnForge1-16-5">1.16.5</a> |
-                        <a href="#" class="text-reset" id="btnForge1-12-2">1.12.2</a> |
-                        <a href="#" class="text-reset" id="btnForge1-7-10">1.7.10</a>        
-                    </div>
-
-                    <h6 class="mt-5">
-                        Where are the mods located?
-                        <a href="#" class="text-muted">read how</a>
-                    </h6>
-                    <div class="input-group">
-                        <span class="input-group-text">Mods-URL</span>
-                        <input type="text" aria-label="Mods-URL" class="form-control" placeholder="URL to mods.zip file..."
-                            id="inputModsUrl">
-                    </div>
-
-                    <a class="form-text text-muted d-block my-4" data-bs-toggle="collapse" href="#collapseMoreSettings" role="button" aria-expanded="false"
-                        aria-controls="collapseMoreSettings">
-                        More options
-                    </a>
-
-                    <div class="collapse" id="collapseMoreSettings">
-                        <div class="card card-body mb-5">
-                            <h6>
-                                How do you want to handle errors?
-                                <a href="#" class="text-muted">read how</a>
-                            </h6>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radioErrorHandling" id="radioErrorOnline" checked>
-                                <label class="form-check-label" for="radioErrorOnline">
-                                    Online error handling
-                                    <span class="badge bg-success bg-opacity-10 text-success">
-                                        recommended
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="radio" name="radioErrorHandling" id="radioErrorLocal">
-                                <label class="form-check-label" for="radioErrorLocal">
-                                    Local error handling
-                                </label>
-                            </div>
+                <div class="alert alert-danger" role="alert" id="alertNotFromForge" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="pe-3">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px;">
+                                <path
+                                    d="M13 1h-2v2H9v2H7v2H5v2H3v2H1v2h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2V9h-2V7h-2V5h-2V3h-2V1zm0 2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3v-2h2V9h2V7h2V5h2V3h2zm0 4h-2v6h2V7zm0 8h-2v2h2v-2z"
+                                    fill="currentColor" />
+                            </svg>
                         </div>
-                    </div>                    
-
-                    <a href="#" class="text-reset d-block fs-3" id="btnGenerate">
-                        Generate now!
-                    </a>
-                </form>
-
-                <hr class="my-4">
-
-                <div class="form-text">
-                    <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#sourcesModal">Sources and
-                        authors</a>
+                        <div style="font-size: 70%;">
+                            <b>Warning!</b>
+                            The Forge installer in this mod-installer is not from the official Forge website. It will be downloaded from a third
+                            party website. Please make sure that you trust the website you're downloading the installer from.
+                            URL: <span class="forgeUrl"></span>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-        </div>
-
-        <div class="card m-auto" style="max-width: 900px; display: none;" id="cardResult">
-            <div class="card-body pt-5 px-5">
-                <h1 class="h3">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 30px; height: 30px;">
-                        <path
-                            d="M18 6h2v2h-2V6zm-2 4V8h2v2h-2zm-2 2v-2h2v2h-2zm-2 2h2v-2h-2v2zm-2 2h2v-2h-2v2zm-2 0v2h2v-2H8zm-2-2h2v2H6v-2zm0 0H4v-2h2v2z"
-                            fill="currentColor" />
-                    </svg>
-                    Your installer is ready!
-                </h1>
-                <p>
-                    You can download your installer by clicking the button below. You can also share it with your friends.
-                </p>
-
-                <hr class="my-4">
-
                 <div class="d-flex justify-content-between">
-                    <a href="#" class="btn btn-light rounded-0 w-100" id="btnDownloadInstaller">
+                    <a href="#" class="btn btn-light rounded-0 w-100" data-bs-toggle="modal" data-bs-target="#modalDownload">
                         <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
                             <path
                                 d="M10 4h6v2h-6V4zM8 8V6h2v2H8zm-4 2V8h4v2H4zm-2 2v-2h2v2H2zm0 6H0v-6h2v6zm0 0h5v2H2v-2zM18 8h-2V6h2v2zm4 4h-4V8h2v2h2v2zm0 6v-6h2v6h-2zm0 0v2h-5v-2h5zm-11 2h2v-2h2v-2h2v-2h-4V9h-2v5H7v2h2v2h2v2z"
@@ -137,13 +66,13 @@
                         </svg><br>
                         Show code
                     </a>
-                    <a href="?startover" class="btn btn-outline-light rounded-0 w-100">
+                    <a href="./" class="btn btn-outline-light rounded-0 w-100">
                         <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
                             <path
                                 d="M16 2h-2v2h2v2H4v2H2v5h2V8h12v2h-2v2h2v-2h2V8h2V6h-2V4h-2V2zM6 20h2v2h2v-2H8v-2h12v-2h2v-5h-2v5H8v-2h2v-2H8v2H6v2H4v2h2v2z"
                                 fill="currentColor" />
                         </svg><br>
-                        Start over
+                        Create own
                     </a>
                 </div>
 
@@ -205,8 +134,66 @@
                 <div class="modal-body">
                     <div class="font-monospace">
                         <pre id="containerCode">
-                    
+
                         </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -> Download -->
+    <div class="modal fade" id="modalDownload" tabindex="-1" aria-labelledby="modalDownloadLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCodeLabel">Download installer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="pe-3">
+                                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px;">
+                                    <path
+                                        d="M13 1h-2v2H9v2H7v2H5v2H3v2H1v2h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2V9h-2V7h-2V5h-2V3h-2V1zm0 2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3v-2h2V9h2V7h2V5h2V3h2zm0 4h-2v6h2V7zm0 8h-2v2h2v-2z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                            <div style="font-size: 70%;">
+                                <b>Warning!</b>
+                                Please make sure that you trust the person who gave you this link before downloading the installer.
+                                More informations are below.
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Only download the installer if you trust the source.
+                        This tool is not affiliated with Mojang or Minecraft. It is just a tool to make mod installation easier.
+                        We are not responsible for any damage caused by the installer or the mods.
+                        Please check the <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#modalCode">source code</a> before downloading.
+                    </p>
+                    <p>
+                        If you are sure that the source is safe, you can download the installer by clicking the button below.
+                        After downloading, you can run the installer by double-clicking it.
+                        Your antivirus, browser or operating system may block the download or the execution of the installer.
+                        If this happens, you can add an exception for the installer or click on "more information" and then "run anyway".
+                    </p>
+                    <div class="clearfix mt-5">
+                        <a href="https://safebrowsing.google.com/safebrowsing/report_badware/?hl=en" class="btn btn-outline-danger rounded-0 float-start">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path d="M3 2h10v2h8v14H11v-2H5v6H3V2zm2 12h8v2h6V6h-8V4H5v10z" fill="currentColor" />
+                            </svg>
+                            Report malware
+                        </a>
+                        <a href="#" class="btn btn-light rounded-0 px-5 float-end" id="btnDownloadInstaller">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path
+                                    d="M10 4h6v2h-6V4zM8 8V6h2v2H8zm-4 2V8h4v2H4zm-2 2v-2h2v2H2zm0 6H0v-6h2v6zm0 0h5v2H2v-2zM18 8h-2V6h2v2zm4 4h-4V8h2v2h2v2zm0 6v-6h2v6h-2zm0 0v2h-5v-2h5zm-11 2h2v-2h2v-2h2v-2h-4V9h-2v5H7v2h2v2h2v2z"
+                                    fill="currentColor" />
+                            </svg>
+                            Download
+                        </a>
                     </div>
                 </div>
             </div>
